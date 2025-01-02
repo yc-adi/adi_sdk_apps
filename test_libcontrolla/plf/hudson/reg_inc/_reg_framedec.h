@@ -1,0 +1,10 @@
+#ifndef __REG_FRAMEDEC_H_
+#define __REG_FRAMEDEC_H_
+
+#define REG_FRAMEDEC_SIZE 68
+
+#define REG_FRAMEDEC_BASE_ADDR 0x1000E200
+
+
+#endif // __REG_FRAMEDEC_H_
+

@@ -1,0 +1,10 @@
+#ifndef __REG_SW_PROFILING_H_
+#define __REG_SW_PROFILING_H_
+
+#define REG_SW_PROFILING_SIZE 48
+
+#define REG_SW_PROFILING_BASE_ADDR 0x1000D100
+
+
+#endif // __REG_SW_PROFILING_H_
+

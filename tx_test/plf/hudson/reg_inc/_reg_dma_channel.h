@@ -1,0 +1,10 @@
+#ifndef __REG_DMA_CHANNEL_H_
+#define __REG_DMA_CHANNEL_H_
+
+#define REG_DMA_CHANNEL_SIZE 16
+
+#define REG_DMA_CHANNEL_BASE_ADDR 0x1000B000
+
+
+#endif // __REG_DMA_CHANNEL_H_
+

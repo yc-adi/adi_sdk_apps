@@ -23,7 +23,7 @@ void write_8(uint32_t address, uint8_t value);
 void write_16(uint32_t address, uint16_t value);
 void write_32(uint32_t address, uint32_t value);
 
-extern int hci_le_tx_test_v1_cmd_handler_hack(uint8_t tx_channel, uint8_t test_data_len, uint8_t pkt_payl);
+extern int hci_le_tx_test_v1_cmd_handler_direct(uint8_t tx_channel, uint8_t test_data_len, uint8_t pkt_payl);
 
 void main() {
     printf("\n\n\n****************************************\n");
@@ -52,7 +52,7 @@ void main() {
     uint8_t pkt_payl = 7;
     printf("tx_channel = %d, test_data_len = %d, pkt_payl = %d\n", tx_channel, test_data_len, pkt_payl);
 
-    ret = hci_le_tx_test_v1_cmd_handler_hack(tx_channel, test_data_len, pkt_payl);
+    ret = hci_le_tx_test_v1_cmd_handler_direct(tx_channel, test_data_len, pkt_payl);
     printf("ret = %d\n", ret);
 
     while(1) {}

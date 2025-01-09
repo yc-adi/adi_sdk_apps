@@ -26,12 +26,10 @@ void write_32(uint32_t address, uint32_t value);
 extern int hci_le_tx_test_v1_cmd_handler_direct(uint8_t tx_channel, uint8_t test_data_len, uint8_t pkt_payl);
 
 void main() {
-    printf("\n\n\n****************************************\n");
-    printf("TX_TEST on FPGA board\n");
-    printf("https://jira.analog.com/browse/GRANITESW-200\n");
-    printf("https://confluence.analog.com/display/GRANITE/Design+Verification\n\n");
-
     int ret = 0;
+
+    write_8(0x40051006,0x0);
+    write_32(0x40042008,0xABCD);
 
     /*
      * @param[in] tx_channel        0x00 to 0x27, RF channel to transmit on.
@@ -50,10 +48,7 @@ void main() {
     uint8_t tx_channel = 1;
     uint8_t test_data_len = 2;
     uint8_t pkt_payl = 7;
-    printf("tx_channel = %d, test_data_len = %d, pkt_payl = %d\n", tx_channel, test_data_len, pkt_payl);
-
     ret = hci_le_tx_test_v1_cmd_handler_direct(tx_channel, test_data_len, pkt_payl);
-    printf("ret = %d\n", ret);
 
     while(1) {}
     
